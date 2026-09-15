@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Verity: Hindi AI-text detector
 
 This project now includes a real training pipeline and a local prediction API. It starts with Hindi because CT² AG_hi contains paired human and AI-generated Hindi news text. The classifier uses XLM-RoBERTa, a multilingual encoder that can later be extended with balanced, labelled data for additional Indic languages.
@@ -18,3 +19,6 @@ The first training run downloads the public CT² AG_hi dataset. The baseline use
 The pipeline separates original articles between training and test data, so an article and its generated variants cannot leak across the split. It is a research starting point, not universal proof of authorship: it may be unreliable for short passages, newer generators, edited text, non-news domains, and languages absent from its training data.
 
 After training, the site calls `POST /api/analyze`. Until then, it clearly falls back to the local demo estimate.
+=======
+# Regional-AI-Text-Analyse
+>>>>>>> 75e3bf09509e2c491acd802f3121cfc79c65146d
