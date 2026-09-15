@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Regional-language AI text analysis workspace." />
+    <title>Verity — Regional AI Text Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Verity home"><span class="brand-mark">V</span> VERITY</a>
+        <div class="nav-links"><a href="#analyze">Analyze</a><a href="#how-it-works">Method</a><a href="#privacy">Privacy</a></div>
+        <button class="language-control" id="uiLanguage" type="button" aria-label="Change interface language">EN <span>⌄</span></button>
+      </nav>
+
+      <section class="hero" id="top">
+        <p class="eyebrow">Regional language intelligence</p>
+        <h1>Know what’s behind<br /><em>the words.</em></h1>
+        <p class="hero-copy">A thoughtful first signal for AI-generated text across India’s languages. Built to support judgment, never replace it.</p>
+        <div class="supported"><span class="pulse"></span> Supports Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati & English</div>
+      </section>
+
+      <section class="workspace" id="analyze" aria-labelledby="analyze-title">
+        <div class="workspace-heading"><div><p class="eyebrow">Text analysis</p><h2 id="analyze-title">Check a passage</h2></div><span class="demo-label">DEMO MODE</span></div>
+        <div class="control-row">
+          <label class="select-label">Language
+            <select id="language">
+              <option value="auto">Detect automatically</option>
+              <option value="Hindi">Hindi · हिन्दी</option>
+              <option value="Bengali">Bengali · বাংলা</option>
+              <option value="Tamil">Tamil · தமிழ்</option>
+              <option value="Telugu">Telugu · తెలుగు</option>
+              <option value="Marathi">Marathi · मराठी</option>
+              <option value="Gujarati">Gujarati · ગુજરાતી</option>
+              <option value="English">English</option>
+            </select>
+          </label>
+          <div class="sample-buttons" aria-label="Load example text"><span>Try an example:</span><button data-sample="hindi" type="button">हिन्दी</button><button data-sample="tamil" type="button">தமிழ்</button><button data-sample="english" type="button">English</button></div>
+        </div>
+        <div class="editor-wrap">
+          <textarea id="textInput" maxlength="5000" placeholder="Paste or write text here to assess its writing patterns…" aria-label="Text to analyze"></textarea>
+          <div class="editor-footer"><span id="charCount">0 / 5,000</span><button class="clear" id="clearText" type="button">Clear</button></div>
+        </div>
+        <div class="action-row"><p class="notice">Your text stays in this browser in demo mode.</p><button class="analyze-button" id="analyzeButton" type="button">Analyze text <span>→</span></button></div>
+      </section>
+
+      <section class="results is-hidden" id="results" aria-live="polite" aria-labelledby="result-title">
+        <div class="result-heading"><div><p class="eyebrow">Analysis result</p><h2 id="result-title">Here’s what we found</h2></div><button id="newAnalysis" type="button" class="new-analysis">+ New analysis</button></div>
+        <div class="result-grid">
+          <article class="verdict-card">
+            <div class="score-ring" id="scoreRing"><span id="score">--</span><small>%</small></div>
+            <div><p class="result-kicker" id="resultKicker">ESTIMATED LIKELIHOOD</p><h3 id="verdict">Analyzing patterns…</h3><p id="verdictDescription">We compare linguistic signals such as predictability, variation, and phrasing patterns.</p></div>
+          </article>
+          <article class="signals-card"><div class="card-top"><h3>Signal breakdown</h3><span id="detectedLanguage">—</span></div><div id="signals" class="signals"></div><p class="fine-print">Signals are directional indicators, not proof of authorship.</p></article>
+        </div>
+        <div class="guidance"><span class="guidance-icon">✦</span><p><strong>Use this as one input.</strong> AI detection is inherently probabilistic, especially for short passages and regional languages. Verify important content with context and trusted sources.</p></div>
+      </section>
+
+      <section class="method" id="how-it-works"><p class="eyebrow">Designed for nuance</p><div class="method-grid"><h2>Patterns, not<br /><em>pronouncements.</em></h2><div><p>Verity looks for patterns often associated with generated writing—such as unusually even sentence construction and low lexical variation—while accounting for the writing systems of regional languages.</p><a href="#privacy">Read our approach <span>→</span></a></div></div></section>
+      <footer id="privacy"><span class="brand footer-brand"><span class="brand-mark">V</span> VERITY</span><p>Local demo · No text is uploaded or stored</p><p>© 2026 Verity Labs</p></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
