@@ -1,4 +1,6 @@
 __pycache__/
 .venv/
-model/
+model/checkpoints/
+model/*.safetensors
+model/*.bin
 *.pyc
